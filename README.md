@@ -59,13 +59,13 @@ Click any archetype to view its recommended structure and before/after example:
 
 ## ⚖️ Capability Comparison Matrix
 
-| Feature | Manual Cleanup | Plain Linter | `repo-organizer-skill` |
+| Capability | Manual Cleanup | General AI (Codex / Claude) | `repo-organizer-skill` |
 | :--- | :---: | :---: | :---: |
-| **Root Junk Audit (`.png`, `.csv`, `.~lock*`)** | ⚠️ Manual | ❌ No | ✅ Automated |
-| **Target Audience Alignment (8 Scenarios)** | ❌ No | ❌ No | ✅ Automated |
-| **Markdown Link & Python Import Healing** | ⚠️ Error-prone | ❌ No | ✅ Automated |
-| **Competitive Edge & Novelty Discovery** | ❌ Subjective | ❌ No | ✅ Agent AI Knowledge |
-| **Developer Feedback Loop Report** | ❌ No | ❌ No | ✅ Automated |
+| **Root Junk Identification (`.png`, `.csv`)** | ⚠️ Manual | ✅ Capable | ✅ Automated Workflow |
+| **Basic README Formatting & Badges** | ⚠️ Manual | ✅ Capable | ✅ Automated Workflow |
+| **Multi-Audience Alignment (8 Archetypes)** | ❌ No | ⚠️ Needs Complex Prompting | ✅ Built-in Workflows |
+| **Directory-Wide Link & Import Healing** | ⚠️ Error-Prone | ⚠️ Single-file Scope | ✅ Full Tree Verification |
+| **Competitive Edge Audit & Feedback Report** | ❌ Subjective | ❌ No | ✅ Automated 4-Step Loop |
 
 ---
 
@@ -80,7 +80,7 @@ curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skil
 ### Option 2: Global Machine Installation
 ```bash
 mkdir -p ~/.gemini/config/skills/repo-organizer
-curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skill/main/SKILL.md -o ~/.gemini/config/skills/repo-organizer/SKILL.md
+curl -sSL https://raw.githubusercontent.com/angelazu-bullet/repo-organizer-skill/main/SKILL.md -o ~/.gemini/config/skills/repo-organizer/SKILL.md
 ```
 
 ---
