@@ -1,0 +1,19 @@
+{
+  "name": "repo-organizer",
+  "version": "1.0.0",
+  "description": "AI Agent Skill for automatically auditing, restructuring, and cleaning messy GitHub repositories based on audience and scenario.",
+  "author": "Angela Zu (angelazu-builder)",
+  "license": "MIT",
+  "keywords": [
+    "ai-agent-skill",
+    "repository-cleaner",
+    "github-organizer",
+    "research-repository",
+    "antigravity-skills",
+    "paper-release",
+    "hackathon-template"
+  ],
+  "skills": [
+    ".agents/skills/repo-organizer/SKILL.md"
+  ]
+}
