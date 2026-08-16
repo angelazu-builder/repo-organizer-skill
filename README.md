@@ -1,6 +1,6 @@
 # 📦 repo-organizer-skill
 
-**Turn messy code clutter into high-converting GitHub landing pages & discover your project's true competitive edge.**
+> **AI Agent Skill for auditing, restructuring, and optimizing GitHub repositories based on target audience & use-case — with automated competitive edge discovery.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/)
@@ -9,16 +9,19 @@
 
 ---
 
-## ⚡ The 3-Second Value Proposition
+## 🎯 Core Philosophy: Audience Alignment & Friction Reduction
 
-Most developers write brilliant code but **fail at repository marketing**. They leave loose `.png` plots, `.csv` logs, and lock files in the root, while burying their most innovative features under paragraphs of text.
+A great GitHub repository is not defined by rigid boilerplate, but by **how effortlessly it communicates with its target audience**:
+- **Competition Judges** want a structured deliverables hub (`docs/submission/`).
+- **Academic Peer Reviewers** want zero-friction single-command reproduction (`python run_eval.py`).
+- **Developers** want quickstart installation and clean modular code (`src/pkg/`, `tests/`).
 
-`repo-organizer-skill` gives AI Agents (Antigravity, Cursor, Claude MCP, Gemini) the exact intelligence to **audit, restructure, and market your GitHub repository** based on your target audience.
+`repo-organizer-skill` gives AI Agents (Antigravity, Cursor, Claude MCP, Gemini) the exact intelligence to **audit your code, identify your true competitive edge, and align your repository structure with your specific scenario.**
 
 ```
 ┌────────────────────────┐      ┌──────────────────────────────┐      ┌─────────────────────────────┐
-│   Messy Root Clutter   │ ───► │  Agent Innovation Audit &    │ ───► │  High-Converting GitHub     │
-│ (PNGs, CSVs, Pycache)  │      │  Competitive Edge Discovery  │      │  Landing Page (8 Archetypes)│
+│   Messy Root Clutter   │ ───► │  Agent Innovation Audit &    │ ───► │  Audience-Aligned Repo      │
+│ (PNGs, CSVs, Pycache)  │      │  Competitive Edge Discovery  │      │  Structure (8 Archetypes)   │
 └────────────────────────┘      └──────────────────────────────┘      └─────────────────────────────┘
 ```
 
@@ -32,27 +35,29 @@ Developers often lack objective self-awareness of their code's true strengths. T
 
 1. 🟢 **Discover Genuine Technical Novelty**: Identifies algorithms, JIT accelerations, and zero-dependency designs unique across GitHub.
 2. 🟡 **Filter Saturated Commodity Claims**: Down-weights commonplace claims (*"Uses AsyncIO"*) so they don't waste prime README real estate.
-3. ✨ **Inject `✨ Key Edge` Section**: Automatically formats and places your true competitive edge right below the 3-second title hook.
+3. ✨ **Inject `✨ Key Edge` Section**: Automatically formats and places your true competitive edge right below the title hook.
 4. 🔴 **Output Developer Feedback Report**: Delivers a private audit report identifying competitive gaps against SOTA projects.
 
 ---
 
-## 🏛️ 8 Supported Repository Archetypes
+## 🏛️ 8 Popular Repository Archetypes
 
-| Archetype | Target Audience | Key Structural Focus |
+Click any archetype to view its recommended structure and before/after example:
+
+| Archetype | Target Audience | Example Structure |
 | :--- | :--- | :--- |
-| **`competition-research`** | Hackathons, Datawhale AI4R, Competitions | Multi-audience hub (`docs/submission/`, `docs/logbook/`, `outputs/`) |
-| **`paper-release`** | arXiv Paper Appendix, Conference Repos | **Zero-friction 1-command reproduction** (`python run_eval.py`) |
-| **`open-source-library`** | PyPI Packages, Developer Tools | PyPA standard (`src/pkg/`, `tests/`, `examples/`, PyPI badges) |
-| **`data-science-pipeline`** | ML Pipelines, Data Science Projects | Cookiecutter layout (`data/raw/`, `models/`, `reports/figures/`) |
-| **`agent-skill-mcp`** | AI Agent Developers (Antigravity, MCP) | Clean `SKILL.md` / `mcp_config.json`, `.agents/skills/` integration |
-| **`curated-awesome-list`** | Community Curators & Topic Lists | Categorized TOC, Badge matrix, strict `CONTRIBUTING.md` |
-| **`fullstack-web-app`** | SaaS Founders & Web Developers | `frontend/`, `backend/`, `docker-compose.yml`, `.env.example` |
-| **`cli-binary-tool`** | DevOps & System Administrators | Terminal UI GIF, package manager install (`brew install`), Flag table |
+| **`competition-research`** | Hackathons, Datawhale AI4R, Competitions | [View Example](examples/competition-research.md) |
+| **`paper-release`** | arXiv Paper Appendix, Conference Repos | [View Example](examples/paper-release.md) |
+| **`open-source-library`** | PyPI Packages, Developer Tools | [View Example](examples/open-source-library.md) |
+| **`data-science-pipeline`** | ML Pipelines, Data Science Projects | [View Example](examples/data-science-pipeline.md) |
+| **`agent-skill-mcp`** | AI Agent Developers (Antigravity, MCP) | [View Example](examples/agent-skill-mcp.md) |
+| **`curated-awesome-list`** | Community Curators & Topic Lists | [View Example](examples/curated-awesome-list.md) |
+| **`fullstack-web-app`** | SaaS Founders & Web Developers | [View Example](examples/fullstack-web-app.md) |
+| **`cli-binary-tool`** | DevOps & System Administrators | [View Example](examples/cli-binary-tool.md) |
 
 ---
 
-## ⚖️ Why Us? (Comparison Matrix)
+## ⚖️ Capability Comparison Matrix
 
 | Feature | Manual Cleanup | Plain Linter | `repo-organizer-skill` |
 | :--- | :---: | :---: | :---: |
@@ -85,9 +90,9 @@ curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skil
 Once installed, simply ask your agent:
 
 ```text
-"Audit my repository and restructure it into a high-converting landing page."
+"Audit my repository and structure it for competition judges."
 "Discover the true competitive edge of my codebase and update the README."
-"Clean up root directory clutter and update all broken relative links."
+"Restructure this codebase for an academic paper release."
 ```
 
 ---
