@@ -1,14 +1,16 @@
 ---
 name: repo-organizer
 description: >-
-  Audits, restructures, and cleans messy GitHub repositories based on target audience and scenario.
+  Audits, restructures, and cleans messy GitHub repositories into high-conversion landing pages based on target audience and scenario.
   Use when the user asks to clean up root directory clutter, structure a repo for competition judges,
-  prepare an academic paper release, build an open-source SDK layout, or fix broken markdown links after file moves.
+  prepare an academic paper release, build an open-source SDK layout, optimize GitHub README conversion, or fix broken markdown links.
 ---
 
-# 📦 Repository Reorganization & Audience Alignment Skill (`repo-organizer`)
+# 📦 Repository Reorganization & Marketing Conversion Skill (`repo-organizer`)
 
-This skill provides a systematic procedure for analyzing, reorganizing, and polishing messy GitHub codebases into clean, professional, and audience-aligned repository architectures.
+This skill provides a systematic procedure for analyzing, reorganizing, and polishing GitHub codebases into clean, professional, and **high-converting repository landing pages**.
+
+> **Core Philosophy**: A GitHub repository is fundamentally a **Marketing Tool & Landing Page**. Beyond clean code structure, it must convert casual visitors into stars, users, and contributors within 3 seconds.
 
 ---
 
@@ -16,14 +18,27 @@ This skill provides a systematic procedure for analyzing, reorganizing, and poli
 
 1. **Root Directory Clutter**: Prototyping leaves loose `.png` plots, `.csv`/`.json` logs, and temporary lock files in the root.
 2. **Audience Mismatch**: A competition project, an academic paper release, and an open-source SDK require completely different repository structures.
-3. **Broken Relative Links**: Manually moving files breaks Markdown image embeds (`![alt](path)`), doc links, and Python relative imports (`sys.path`).
-4. **Git Artifact Leaks**: Missing `.gitignore` entries cause `__pycache__`, `.DS_Store`, and `.~lock*` files to pollute GitHub commits.
+3. **Low GitHub Conversion Rate**: Great tech with poor README marketing fails to gain traction or stars.
+4. **Broken Relative Links**: Manually moving files breaks Markdown image embeds (`![alt](path)`), doc links, and Python relative imports (`sys.path`).
+5. **Git Artifact Leaks**: Missing `.gitignore` entries cause `__pycache__`, `.DS_Store`, and `.~lock*` files to pollute GitHub commits.
+
+---
+
+## 🚀 GitHub Landing Page Conversion Rate Optimization (CRO)
+
+Every reorganized repository MUST implement these 5 high-conversion landing page elements:
+
+1. **The 3-Second Hook Rule**: A bold 1-sentence value proposition right under the title explaining *what pain it solves instantly*.
+2. **Above-the-Fold Visual Hero Asset**: A high-impact 10-second Demo GIF, video screenshot, or clean architecture diagram placed immediately before deep technical text.
+3. **Zero-Friction Quickstart Command**: Single copy-paste execution command (`pip install ...`, `npx ...`, `docker run ...`) placed before detailed documentation.
+4. **Comparison Matrix ("Why Us?")**: A clean table contrasting your solution against existing alternatives.
+5. **Social Card Guidelines (Open Graph)**: Recommendations for setting up a `1200x630` PNG image for GitHub Social Preview when shared on Twitter/X or LinkedIn.
 
 ---
 
 ## 🏛️ Repository Archetype Selector
 
-Before moving any files, identify the **primary target audience and scenario** with the user:
+Identify the **primary target audience and scenario** with the user:
 
 ### Archetype 1: Competition & Hackathon (`competition-research`)
 - **Target Audience**: Competition Judges (want `.docx`/PPT deliverables), Technical Reviewers (want methodology logbooks), Developers (want CLI script).
@@ -55,12 +70,12 @@ Before moving any files, identify the **primary target audience and scenario** w
   └── scripts/                   # Shell scripts for multi-GPU training/eval
   ```
 
-### Archetype 3: Open-Source Python Package (`open-source-library`)
+### Archetype 3: Open-Source Python Package / Tool (`open-source-library`)
 - **Target Audience**: External Software Developers & Package Maintainers.
 - **Structure**:
   ```
   root/
-  ├── README.md                  # PyPI badge, installation, quickstart code
+  ├── README.md                  # PyPI badge, 3-sec hook, 1-line install, quickstart
   ├── pyproject.toml / setup.py
   ├── src/pkg_name/              # Package module
   ├── tests/                     # Pytest suite
@@ -103,10 +118,12 @@ After moving files, **immediately audit and update**:
 1. **Markdown Links**: Scan all `.md` files for relative links (`[text](url)` and `![alt](path)`). Update paths to point to new subfolder locations.
 2. **Python Imports**: In scripts and `.ipynb` notebooks, ensure `sys.path.insert(0, os.path.abspath('..'))` or `from src import ...` is correctly configured.
 
-### Step 5: Navigation & Index Guide Generation
-- Add a **Quick Navigation Menu** at the top of `README.md`.
-- Add a mini `docs/README.md` guiding different audience types to their target folders.
-- Add an `outputs/README.md` listing figure schemas and data logs.
+### Step 5: High-Conversion README Generation
+- Add **Status Badges** (License, Python Version, PRs Welcome).
+- Insert **3-Second Value Proposition**.
+- Insert **Visual Hero Asset (GIF/Diagram)**.
+- Insert **Single-Line Copy-Paste Quickstart Command**.
+- Add a **Quick Navigation Menu** for multi-folder repos.
 
 ### Step 6: `.gitignore` Hardening
 Ensure `.gitignore` contains:
@@ -131,6 +148,7 @@ __pycache__/
 ## 📋 Reorganization Checklist
 
 - [ ] Chosen repository archetype matches target audience & scenario.
+- [ ] README includes 3-second hook, visual asset (GIF/diagram), and 1-line quickstart.
 - [ ] Root directory contains ONLY essential entry files (`README.md`, `main.py`, `requirements.txt`, `LICENSE`, `.gitignore`).
 - [ ] No loose PNGs, CSVs, or JSONs sitting in root.
 - [ ] `docs/` is partitioned by audience/purpose with a guide `docs/README.md`.
