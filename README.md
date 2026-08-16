@@ -1,6 +1,6 @@
 # 📦 repo-organizer-skill
 
-> **AI Agent Skill for automatically auditing, restructuring, and cleaning messy GitHub repositories based on audience and scenario.**
+**Turn messy code clutter into high-converting GitHub landing pages & discover your project's true competitive edge.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/)
@@ -9,45 +9,70 @@
 
 ---
 
-## 💡 Why `repo-organizer`?
+## ⚡ The 3-Second Value Proposition
 
-When prototyping code, writing papers, or entering hackathons, root directories inevitably accumulate loose `.png` plots, `.csv`/`.json` logs, and temporary lock files.
+Most developers write brilliant code but **fail at repository marketing**. They leave loose `.png` plots, `.csv` logs, and lock files in the root, while burying their most innovative features under paragraphs of text.
 
-However, **there is no one-size-fits-all repository structure**:
-- **Competition Judges** want structured Word/PPT deliverables in a clear submission folder.
-- **Academic Researchers** want flat, minimal-friction scripts (`python run_eval.py`).
-- **Software Engineers** want modular Python packages (`src/pkg/`, `tests/`).
+`repo-organizer-skill` gives AI Agents (Antigravity, Cursor, Claude MCP, Gemini) the exact intelligence to **audit, restructure, and market your GitHub repository** based on your target audience.
 
-`repo-organizer-skill` solves this by empowering AI coding agents (Antigravity, Gemini, Claude, Cursor) to **audit, restructure, and fix links** in your GitHub repository based on your target audience.
-
----
-
-## ✨ Features
-
-- 🏛️ **4 Targeted Archetypes**:
-  - `competition-research`: Partitioned docs hub (`submission/`, `logbook/`, `references/`) + `outputs/`.
-  - `paper-release`: Flat 1-command reproduction layout with zero cognitive friction.
-  - `open-source-library`: Standard PyPA layout (`src/pkg/`, `tests/`, `examples/`).
-  - `data-science-pipeline`: Cookiecutter ML pipeline (`data/`, `models/`, `reports/figures/`).
-- 🔗 **Automatic Path & Link Healing**: Automatically updates Markdown image links (`![alt](path)`) and Python relative imports (`sys.path`) after moving files.
-- 📑 **Audience Guide Generator**: Auto-generates `docs/README.md` and `outputs/README.md` indices.
-- 🛡️ **Git Hardening**: Automatically detects temporary lock files (`.~lock*`), `__pycache__`, and `.DS_Store` to update `.gitignore`.
+```
+┌────────────────────────┐      ┌──────────────────────────────┐      ┌─────────────────────────────┐
+│   Messy Root Clutter   │ ───► │  Agent Innovation Audit &    │ ───► │  High-Converting GitHub     │
+│ (PNGs, CSVs, Pycache)  │      │  Competitive Edge Discovery  │      │  Landing Page (8 Archetypes)│
+└────────────────────────┘      └──────────────────────────────┘      └─────────────────────────────┘
+```
 
 ---
 
-## 🚀 Quick Installation
+## 💎 Killer Feature: Agent Innovation Audit & Developer Feedback Loop
 
-### Option 1: Antigravity / Gemini Workspace (Recommended)
-Copy the skill folder into your project's `.agents/skills/` directory:
+Developers often lack objective self-awareness of their code's true strengths. They highlight commodity features (*"Built with React"*) while missing their **genuine unfair technical advantage**.
 
+`repo-organizer-skill` equips your Agent to perform a 4-step audit:
+
+1. 🟢 **Discover Genuine Technical Novelty**: Identifies algorithms, JIT accelerations, and zero-dependency designs unique across GitHub.
+2. 🟡 **Filter Saturated Commodity Claims**: Down-weights commonplace claims (*"Uses AsyncIO"*) so they don't waste prime README real estate.
+3. ✨ **Inject `✨ Key Edge` Section**: Automatically formats and places your true competitive edge right below the 3-second title hook.
+4. 🔴 **Output Developer Feedback Report**: Delivers a private audit report identifying competitive gaps against SOTA projects.
+
+---
+
+## 🏛️ 8 Supported Repository Archetypes
+
+| Archetype | Target Audience | Key Structural Focus |
+| :--- | :--- | :--- |
+| **`competition-research`** | Hackathons, Datawhale AI4R, Competitions | Multi-audience hub (`docs/submission/`, `docs/logbook/`, `outputs/`) |
+| **`paper-release`** | arXiv Paper Appendix, Conference Repos | **Zero-friction 1-command reproduction** (`python run_eval.py`) |
+| **`open-source-library`** | PyPI Packages, Developer Tools | PyPA standard (`src/pkg/`, `tests/`, `examples/`, PyPI badges) |
+| **`data-science-pipeline`** | ML Pipelines, Data Science Projects | Cookiecutter layout (`data/raw/`, `models/`, `reports/figures/`) |
+| **`agent-skill-mcp`** | AI Agent Developers (Antigravity, MCP) | Clean `SKILL.md` / `mcp_config.json`, `.agents/skills/` integration |
+| **`curated-awesome-list`** | Community Curators & Topic Lists | Categorized TOC, Badge matrix, strict `CONTRIBUTING.md` |
+| **`fullstack-web-app`** | SaaS Founders & Web Developers | `frontend/`, `backend/`, `docker-compose.yml`, `.env.example` |
+| **`cli-binary-tool`** | DevOps & System Administrators | Terminal UI GIF, package manager install (`brew install`), Flag table |
+
+---
+
+## ⚖️ Why Us? (Comparison Matrix)
+
+| Feature | Manual Cleanup | Plain Linter | `repo-organizer-skill` |
+| :--- | :---: | :---: | :---: |
+| **Root Junk Audit (`.png`, `.csv`, `.~lock*`)** | ⚠️ Manual | ❌ No | ✅ Automated |
+| **Target Audience Alignment (8 Scenarios)** | ❌ No | ❌ No | ✅ Automated |
+| **Markdown Link & Python Import Healing** | ⚠️ Error-prone | ❌ No | ✅ Automated |
+| **Competitive Edge & Novelty Discovery** | ❌ Subjective | ❌ No | ✅ Agent AI Knowledge |
+| **Developer Feedback Loop Report** | ❌ No | ❌ No | ✅ Automated |
+
+---
+
+## 🚀 1-Line Quickstart Installation
+
+### Option 1: Workspace Installation (Recommended)
 ```bash
 mkdir -p .agents/skills/repo-organizer
 curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skill/main/SKILL.md -o .agents/skills/repo-organizer/SKILL.md
 ```
 
 ### Option 2: Global Machine Installation
-Install globally across all local projects:
-
 ```bash
 mkdir -p ~/.gemini/config/skills/repo-organizer
 curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skill/main/SKILL.md -o ~/.gemini/config/skills/repo-organizer/SKILL.md
@@ -55,34 +80,20 @@ curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skil
 
 ---
 
-## 📖 How to Use
+## 📖 How to Prompt Your Agent
 
-Prompt your AI coding assistant with any of the following natural language commands:
+Once installed, simply ask your agent:
 
 ```text
-"Audit my repository and clean up the root directory clutter."
-"Organize this repository for competition judges and research reviewers."
-"Restructure this codebase for an academic paper release."
-"Format this project as a standard open-source Python package."
+"Audit my repository and restructure it into a high-converting landing page."
+"Discover the true competitive edge of my codebase and update the README."
+"Clean up root directory clutter and update all broken relative links."
 ```
-
----
-
-## 🏛️ Archetype Examples
-
-| Archetype | Best For | Example Layout |
-| :--- | :--- | :--- |
-| **`competition-research`** | Hackathons, Datawhale AI4R, Competitions | [View Example](examples/competition-research.md) |
-| **`paper-release`** | arXiv Paper Appendix, Conference Repos | [View Example](examples/paper-release.md) |
-| **`open-source-library`** | PyPI Packages, Developer Tools | [View Example](examples/open-source-library.md) |
-| **`data-science-pipeline`** | ML Pipelines, Data Analysis Projects | [View Example](examples/data-science-pipeline.md) |
 
 ---
 
 ## 📄 License
 
 Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
-
----
 
 *Maintained with ❤️ by [Angela Zu (angelazu-builder)](https://github.com/angelazu-builder)*
