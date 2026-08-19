@@ -43,6 +43,35 @@ Outputs a private **"Agent Innovation Audit Report"** for the creator:
 
 ---
 
+## 📸 Visual Assets & Live Demo Capture Protocol
+
+> ⚠️ **STRICT DIRECTIVE: NEVER USE AI-GENERATED VISUALS!**  
+> All images, plots, and media in the repository MUST be authentic product artifacts:
+> - **Product Screenshots**: Taken directly from running web apps / UI instances.
+> - **Data Plots**: Rendered directly from raw benchmark data, evaluation logs, or metrics using Python (`matplotlib`/`seaborn`/`plotly`).
+> - **Terminal Demonstrations**: Recorded or transcribed from actual CLI command execution.
+> - **Diagrams**: Native GitHub Mermaid diagrams (````mermaid ... ````) or standard vector SVGs.
+
+### Demo Capture Procedure: When a Repo Lacks Visuals
+When auditing a repository that lacks demo assets (or has broken/outdated images):
+
+1. **Web Apps & UI Services** (React, Streamlit, Gradio, Flask, FastAPI):
+   - Launch or inspect the active web server (e.g., `http://localhost:8501` or deployed URL).
+   - Use browser automation to open the app URL, trigger realistic user interactions, and take clean screenshot(s).
+   - Save screenshots to `docs/assets/demo-screenshot.png` (or `assets/demo-screenshot.png`) and embed them in `README.md`.
+
+2. **Data Science & ML Projects**:
+   - Execute benchmark/evaluation scripts to produce real performance metrics.
+   - Plot confusion matrices, loss curves, or accuracy comparisons using `matplotlib`/`seaborn` directly from output CSVs/logs.
+   - Save plots to `docs/assets/benchmark_plot.png` and embed them in `README.md`.
+
+3. **CLI Tools & Open-Source Libraries**:
+   - Run sample commands in terminal.
+   - Capture real ANSI terminal outputs, recording SVG clips, or clean terminal execution blocks.
+   - Render architecture and workflow diagrams using native Markdown Mermaid blocks.
+
+---
+
 ## 🏛️ 8 Popular GitHub Repository Archetypes
 
 Identify the **primary target audience and scenario** with the user:
@@ -102,13 +131,18 @@ Move files and rename deliverables cleanly (`01_Problem_Definition.docx`, `02_Fi
 ### Step 5: Markdown Link & Python Path Auditing
 Audit and update all relative Markdown links (`![alt](path)`) and Python relative imports (`sys.path`).
 
-### Step 6: High-Conversion README & Edge Injection
+### Step 6: Visual Asset & Live Demo Capture Protocol
+- Check if project contains real product screenshots or data plots.
+- **If missing**: Launch live app instance / dev server and capture real screenshots, or plot evaluation graphs directly from raw data logs. **NEVER use AI image generators.**
+- Render native Mermaid architecture diagrams for complex workflows.
+
+### Step 7: High-Conversion README & Edge Injection
 - Insert **3-Second Hook Rule**.
 - Insert **✨ Key Innovations & Competitive Edge Section**.
-- Insert **Above-the-Fold Visual Hero Asset (GIF/Diagram)**.
+- Insert **Authentic Visual Hero Asset (Real Screenshot / Real Data Plot / Mermaid Diagram)**.
 - Insert **Single-Line Copy-Paste Quickstart Command**.
 
-### Step 7: `.gitignore` Hardening & Git Sync
+### Step 8: `.gitignore` Hardening & Git Sync
 - Ensure `.gitignore` excludes `__pycache__`, `.DS_Store`, and temporary lock files.
 - Commit with git message: `refactor: reorganize repository structure to [Archetype] standard`.
 
@@ -117,8 +151,9 @@ Audit and update all relative Markdown links (`![alt](path)`) and Python relativ
 ## 📋 Reorganization & Edge Checklist
 
 - [ ] Agent Innovation Audit executed & Feedback Report delivered to creator.
-- [ ] README contains 3-second hook, ✨ Key Edge Section, visual asset, and 1-line quickstart.
+- [ ] README contains 3-second hook, ✨ Key Edge Section, authentic visual asset (NO AI visuals!), and 1-line quickstart.
+- [ ] Live demo screenshot captured from running app OR real data plot generated (if repo lacked visuals).
 - [ ] Selected archetype matches 1 of the 8 GitHub popular scenarios.
 - [ ] Root directory contains ONLY essential entry files (`README.md`, `main.py`, `requirements.txt`, `LICENSE`, `.gitignore`).
 - [ ] All relative Markdown links (`![alt](path)`) resolve to valid existing files.
-- [ ] Python imports run cleanly without `ImportError`.
+- [ ] Python imports run cleanly without `Error`.

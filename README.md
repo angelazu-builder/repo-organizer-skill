@@ -1,6 +1,6 @@
 # 📦 repo-organizer-skill
 
-> **AI Agent Skill for auditing, restructuring, and optimizing GitHub repositories based on target audience & use-case — with automated competitive edge discovery.**
+> **AI Agent Skill for auditing, restructuring, and optimizing GitHub repositories based on target audience & use-case — with automated competitive edge discovery and authentic demo asset capture.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/)
@@ -9,12 +9,21 @@
 
 ---
 
-## 🖼️ Live Agent Demo & Overview
+## 🎬 Real Terminal Demo & Agent Execution
 
-![repo-organizer-skill Terminal & Agent Demo](assets/demo-hero.jpg)
+```mermaid
+flowchart LR
+    A[Messy Root Clutter\n.png, .csv, temp files] --> B{Agent Innovation Audit}
+    B -->|1. Novelty Discovery| C[Identify Technical Edge]
+    B -->|2. Demo Asset Capture| D[Browser Screenshot / Data Plot]
+    B -->|3. Archetype Router| E[Select 1 of 8 Archetypes]
+    C --> F[Audience-Aligned\nGitHub Repository]
+    D --> F
+    E --> F
+```
 
 <details open>
-<summary><b>🎬 Click to expand Live Terminal Demo Execution</b></summary>
+<summary><b>💻 Live Terminal Execution Transcript</b></summary>
 
 ```bash
 $ agy run "Audit my repository, discover technical edge, and organize for competition judges"
@@ -24,21 +33,21 @@ $ agy run "Audit my repository, discover technical edge, and organize for compet
     ├── Detected 3 broken relative links in README.md
     └── Parsing AST & codebase dependencies...
 
-✨ [2/4] Competitive Edge & Novelty Discovery:
-    [✔] Identified Novel Technical Advantage: Zero-Dependency Asynchronous Consensus Protocol
-    [⚡] Down-weighted Saturated Buzzwords: "Built with React", "Uses AsyncIO"
-    [📝] Generated Private Audit Report: .agents/reports/audit_feedback.md
+📸 [2/4] Visual Assets & Live Demo Protocol:
+    ├── Checking repository for visual demo assets...
+    ├── [!] No existing demo screenshot detected.
+    ├── Launching web app / opening active server (http://localhost:8501)...
+    └── [✔] Captured authentic product screenshot to `docs/assets/demo-screenshot.png`
 
-🏗️ [3/4] Archetype Alignment:
-    [🎯] Target Scenario Selected: `competition-research`
-    [📦] Re-structured files:
-          • Created /docs/submission/ (Judges & Criteria Alignment)
-          • Created /src/ & /tests/
-          • Moved root clutter to /artifacts/scratch/
+✨ [3/4] Competitive Edge & Novelty Discovery:
+    ├── [✔] Identified Novel Technical Advantage: Zero-Dependency Asynchronous Consensus Protocol
+    ├── [⚡] Down-weighted Saturated Buzzwords: "Built with React", "Uses AsyncIO"
+    └── [📝] Generated Private Audit Report: `.agents/reports/audit_feedback.md`
 
-🔗 [4/4] Healing Links & Final Verification:
-    [✔] Healed 3 broken README markdown references
-    [✔] Generated clean GitHub Landing Page
+🏗️ [4/4] Archetype Alignment & Final Output:
+    ├── [🎯] Target Scenario Selected: `competition-research`
+    ├── [📦] Re-structured files into /docs/submission/, /src/, /tests/
+    └── [✔] Healed 3 broken README markdown references
 
 ✅ SUCCESS: Repository restructured into high-conversion 'competition-research' layout!
 ```
@@ -53,28 +62,29 @@ A great GitHub repository is not defined by rigid boilerplate, but by **how effo
 - **Academic Peer Reviewers** want zero-friction single-command reproduction (`python run_eval.py`).
 - **Developers** want quickstart installation and clean modular code (`src/pkg/`, `tests/`).
 
-`repo-organizer-skill` gives AI Agents (Antigravity, Cursor, Claude MCP, Gemini) the exact intelligence to **audit your code, identify your true competitive edge, and align your repository structure with your specific scenario.**
+`repo-organizer-skill` gives AI Agents (Antigravity, Cursor, Claude MCP, Gemini) the exact intelligence to **audit your code, identify your true competitive edge, capture real product screenshots, and align your repository structure with your specific scenario.**
 
-### 📊 Agent Workflow Diagram
+---
 
-```mermaid
-flowchart LR
-    A[Messy Root Clutter\n.png, .csv, temp files] --> B{Agent Innovation Audit}
-    B -->|1. Novelty Discovery| C[Identify Technical Edge]
-    B -->|2. Link Healing| D[Fix Broken References]
-    B -->|3. Archetype Router| E[Select 1 of 8 Archetypes]
-    C --> F[Audience-Aligned\nGitHub Repository]
-    D --> F
-    E --> F
-```
+## 📸 Visual Assets & Live Demo Capture Protocol
+
+> ⚠️ **STRICT DIRECTIVE: NO AI-GENERATED VISUALS**  
+> All visual media in your repository must be authentic product artifacts:
+> - **Product Screenshots**: Automated capture from live web app URLs / local dev servers via browser tools.
+> - **Data Plots**: Generated directly from raw benchmark data or evaluation logs using `matplotlib`/`seaborn`.
+> - **Native Diagrams**: Standard GitHub Mermaid flowcharts.
+
+When auditing a repository without demo assets, `repo-organizer-skill` automatically:
+1. Detects live web apps or running UI services (`localhost`, Streamlit, React, Gradio).
+2. Automates browser navigation to take authentic full-page or element screenshots.
+3. Generates real benchmark plots directly from dataset metrics.
+4. Places captured media in `docs/assets/` and links them in `README.md`.
 
 ---
 
 ## 💎 Killer Feature: Agent Innovation Audit & Developer Feedback Loop
 
 Developers often lack objective self-awareness of their code's true strengths. They highlight commodity features (*"Built with React"*) while missing their **genuine unfair technical advantage**.
-
-![Competitive Edge & Novelty Audit Dashboard](assets/audit-report-demo.jpg)
 
 `repo-organizer-skill` equips your Agent to perform a 4-step audit:
 
@@ -123,6 +133,7 @@ graph TD
 | **Basic README Formatting & Badges** | ⚠️ Manual | ✅ Capable | ✅ Automated Workflow |
 | **Multi-Audience Alignment (8 Archetypes)** | ❌ No | ⚠️ Needs Complex Prompting | ✅ Built-in Workflows |
 | **Directory-Wide Link & Import Healing** | ⚠️ Error-Prone | ⚠️ Single-file Scope | ✅ Full Tree Verification |
+| **Live App Screenshot & Data Plot Capture** | ❌ No | ❌ No | ✅ Automated Browser/Plot Workflow |
 | **Competitive Edge Audit & Feedback Report** | ❌ Subjective | ❌ No | ✅ Automated 4-Step Loop |
 
 ---
