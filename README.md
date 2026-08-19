@@ -1,6 +1,6 @@
 # 📦 repo-organizer-skill
 
-> **Enterprise AI Agent Skill for auditing, restructuring, and optimizing GitHub repositories based on target audience & scenario — featuring an Evidence-Backed Architecture: Mandatory Tool Stack Matrix, 3-Layer Novelty Audits (GitHub API ──► OpenAlex/arXiv ──► Web Search), Deterministic Invariant Baselines, AST Safe Migration Pipelines, and Evidence-Based Landing Pages.**
+> **Enterprise AI Agent Skill for auditing, restructuring, and optimizing GitHub repositories based on target audience & scenario — featuring an Evidence-Backed Architecture: Concrete Deterministic Scripts (`scripts/`), 3-Layer Novelty Audits (GitHub API ──► OpenAlex/arXiv ──► Web Search), Deterministic Invariant Baselines, AST Safe Migration Pipelines, and Evidence-Based Landing Pages.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/)
@@ -9,19 +9,42 @@
 
 ---
 
-## 🏛️ Golden Tool Hierarchy & Architecture
+## 🛠️ Built-in Deterministic Execution Tooling (`scripts/`)
 
-`repo-organizer-skill` shifts from a prompt that writes marketing text into an **Evidence-Backed Repository Transformation Agent**. It enforces a strict separation between LLM interpretation and deterministic tool verification:
+Rather than relying on abstract prompts, `repo-organizer-skill` ships with concrete, executable Python tooling in `scripts/`:
+
+```
+repo-organizer-skill/
+├── SKILL.md
+├── plugin.json
+├── examples/
+└── scripts/
+    ├── invariant_checker.py       # Captures & verifies 6-domain invariant baselines
+    ├── ast_import_analyzer.py     # AST dependency graph analysis & import integrity
+    ├── safe_migrate.py            # Dry-run validation, atomic git mv relocations, & rollback
+    └── external_novelty_search.py # GitHub REST & OpenAlex/arXiv API novelty evidence audit
+```
+
+| Tool Script | CLI Command | Purpose & Output |
+| :--- | :--- | :--- |
+| **`invariant_checker.py`** | `python3 scripts/invariant_checker.py [snapshot\|verify]` | Tracks relative links, AST imports, entry points & CI workflows |
+| **`ast_import_analyzer.py`** | `python3 scripts/ast_import_analyzer.py` | AST module dependency tree analysis & relative import verification |
+| **`safe_migrate.py`** | `python3 scripts/safe_migrate.py --plan plan.json [--dry-run]` | Validates migration plan, dry-runs, executes `git mv`, and guards rollback |
+| **`external_novelty_search.py`**| `python3 scripts/external_novelty_search.py` | Queries GitHub API & arXiv API to collect evidence tuples for novelty claims |
+
+---
+
+## 🏛️ Golden Tool Hierarchy & Architecture
 
 ```mermaid
 flowchart TD
     LLM[LLM: Interpretation / Synthesis / Plan Proposal] --> External[External Evidence: Web / APIs / Search]
     LLM --> Local[Local Codebase: AST / Parsers / Git]
     
-    External --> Checks[Deterministic Verification Checks\nGit / AST / Parsers / Tests]
+    External --> Checks[Deterministic Verification Scripts\ninvariant_checker.py / ast_import_analyzer.py / safe_migrate.py]
     Local --> Checks
 
-    Checks -->|Pass| Action[Final Action: Executed via git mv & Scripts]
+    Checks -->|Pass| Action[Final Action: Executed via safe_migrate.py]
     Checks -->|Fail| Rollback[🔴 Automatic Rollback: git reset]
 ```
 
@@ -33,19 +56,19 @@ flowchart TD
 | :--- | :--- | :--- |
 | **Repo & Version Info** | `git` / `gh` CLI | `git clone`, `commit`, `diff`, `branch`, `history`, `git ls-files` |
 | **GitHub Metadata** | GitHub REST / GraphQL API (`gh api`) | Retrieve repo metadata, languages, topics, stars, forks, contributors |
-| **GitHub External Search** | GitHub Search API (`gh api /search/...`) | Search top 5–10 real comparable implementations (`code search`, `repository search`) |
-| **Code-level Novelty** | AST (`ast`) / `Tree-sitter` / `ripgrep` | Extract algorithms, data structures, custom workflows (No LLM guessing!) |
+| **GitHub External Search** | `scripts/external_novelty_search.py` | Query GitHub Search API (`code search`, `repository search`) for top 5–10 real comparable implementations |
+| **Code-level Novelty** | `scripts/ast_import_analyzer.py` | Extract algorithms, data structures, custom workflows via Python AST |
 | **Academic Novelty** | OpenAlex API + arXiv API | Search papers, mechanisms, comparable algorithms, publication timestamps |
 | **Web / Product Competitors**| `search_web` / HTTP | Search official product sites, blogs, benchmarks, company implementations |
-| **Markdown Link Audit** | Python Markdown Parser + HTTP HEAD/GET | Parse relative Markdown links and verify external URL HTTP response codes |
-| **Python Import Audit** | Python `ast` module (`ast.parse()`) | AST tree parsing of module dependencies and import statements |
+| **Markdown Link Audit** | `scripts/invariant_checker.py` | Parse relative Markdown links and verify external URL HTTP response codes |
+| **Python Import Audit** | `scripts/ast_import_analyzer.py` | AST tree parsing of module dependencies and import statements |
 | **JS/TS Import Audit** | `Tree-sitter` / TypeScript Compiler API | Parse module import trees and export dependencies for JavaScript/TypeScript |
 | **YAML / CI Audit** | `PyYAML` / YAML Parsers | Inspect `.github/workflows/*.yml` step paths and environment variables |
 | **Package Scripts** | JSON / TOML Parsers | Parse `package.json`, `pyproject.toml`, `Cargo.toml` entry points and scripts |
 | **Dependency Graph** | Native Package Managers | `npm`/`pnpm`, `uv`/`poetry`/`pip`, `cargo` dependency resolution |
 | **Test/Build Verification** | Native Repo Commands | Execute `pytest`, `npm test`, `cargo test`, `make` to verify runtime integrity |
 | **Diff Sanity Check** | `git diff --check` + `git diff` | Verify whitespace, path changes, and code diffs before final commit |
-| **Migration Execution** | `git mv` + Custom Script | Perform atomic, trackable, and safe file relocations |
+| **Migration Execution** | `scripts/safe_migrate.py` (`git mv`) | Perform atomic, trackable, and safe file relocations |
 | **Rollback Guard** | `git reset` / Git Worktree | Instantly restore baseline on test or invariant failure |
 
 ---
@@ -53,7 +76,7 @@ flowchart TD
 ## ⚡ Core Capabilities
 
 ### 🔬 1. 3-Layer External Novelty Audit (Evidence ──► Model Judgment)
-Never rely on LLM training weights alone to judge code novelty. `repo-organizer-skill` conducts a 3-layer search across GitHub APIs, OpenAlex/arXiv academic APIs, and Web Search:
+Never rely on LLM training weights alone to judge code novelty. `repo-organizer-skill` conducts a 3-layer search across GitHub APIs, OpenAlex/arXiv academic APIs, and Web Search via `scripts/external_novelty_search.py`:
 
 ```text
 Claim        : Zero-Dependency Asynchronous Consensus Engine
@@ -67,21 +90,21 @@ Confidence   : verified (Validated against 12 GitHub search results & OpenAlex A
 ---
 
 ### 🛡️ 2. Before/After Invariant Baseline Verification
-Restructuring must never break your codebase. Before touching a single file, the skill captures an **Invariant Baseline** using local parsers (`ast`, `PyYAML`, `json`, `tomllib`):
-- 🔗 **README & Documentation Links** (Parsed & HTTP checked)
-- 🐍 **AST Module Imports** (Python `ast.parse()`, `Tree-sitter` for JS/TS)
+Restructuring must never break your codebase. Before touching a single file, the skill captures an **Invariant Baseline** using `python3 scripts/invariant_checker.py snapshot`:
+- 🔗 **README & Documentation Links** (Parsed & verified)
+- 🐍 **AST Module Imports** (`scripts/ast_import_analyzer.py`)
 - 🚀 **Package Entry Points & CLI Executables** (`package.json`, `pyproject.toml`)
 - ⚙️ **CI/CD Workflows (`.github/workflows/*.yml`)**
 - 🐳 **Docker & Configuration File Paths**
 - 🧪 **Automated Test & Build Suites** (`pytest`, `npm test`)
 
-Post-migration, all 6 domains are re-verified to guarantee: **Same semantics, better structure.**
+Post-migration, `python3 scripts/invariant_checker.py verify` re-tests all 6 domains to guarantee: **Same semantics, better structure.**
 
 ---
 
-### 🛟 3. Safe Migration Pipeline (LLM Plan ──► Deterministic Execution)
-- **Deterministic Authority**: The LLM proposes migration plans, but execution is delegated strictly to deterministic analyzers and `git mv` scripts.
-- **Dry-Run Simulation**: Simulates file relocations (`Source ──► Destination`) to catch path collisions before touching disk.
+### 🛟 3. Safe Migration Pipeline (`scripts/safe_migrate.py`)
+- **Deterministic Authority**: The LLM proposes migration plans, but execution is delegated strictly to `scripts/safe_migrate.py` (`git mv`).
+- **Dry-Run Simulation**: Simulates file relocations (`Source ──► Destination`) via `--dry-run` to catch path collisions before touching disk.
 - **Strict Rollback Guard**: If any test, build command, or invariant check fails post-migration, execution **stops immediately** and triggers an automatic rollback (`git reset --hard HEAD`).
 
 ---
@@ -145,10 +168,10 @@ graph TD
 
 | Capability | Manual Cleanup | General AI (Codex / Claude) | `repo-organizer-skill` |
 | :--- | :---: | :---: | :---: |
-| **Tool Hierarchy Architecture** | ❌ Manual | ❌ LLM Unassisted | ✅ LLM Plan ──► Deterministic Tool Execution |
+| **Built-in Executable Deterministic Tooling** | ❌ No | ❌ No | ✅ Executable `scripts/` Suite Included |
 | **3-Layer Novelty Audit (GitHub / arXiv / Web)**| ❌ No | ❌ LLM Hallucination | ✅ GitHub REST + OpenAlex + arXiv APIs |
-| **Before/After Invariant Baseline Verification** | ❌ Manual | ❌ No | ✅ AST, PyYAML, JSON/TOML Parsers |
-| **Safe AST Migration + Dry-Run & Rollback** | ⚠️ Error-Prone | ⚠️ Direct File Mutation | ✅ LLM Plan ──► AST Validator ──► `git mv` |
+| **Before/After Invariant Baseline Verification** | ❌ Manual | ❌ No | ✅ `scripts/invariant_checker.py` |
+| **Safe AST Migration + Dry-Run & Rollback** | ⚠️ Error-Prone | ⚠️ Direct File Mutation | ✅ `scripts/safe_migrate.py` (`git mv`) |
 | **Evidence-Based README Interface** | ❌ No | ⚠️ Generic Marketing | ✅ What → Why → Evidence → How → Differentiator |
 | **Live App Screenshot & Data Plot Capture** | ❌ No | ❌ No | ✅ Browser Automation & Real Plots |
 
