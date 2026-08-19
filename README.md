@@ -9,6 +9,43 @@
 
 ---
 
+## 🖼️ Live Agent Demo & Overview
+
+![repo-organizer-skill Terminal & Agent Demo](assets/demo-hero.jpg)
+
+<details open>
+<summary><b>🎬 Click to expand Live Terminal Demo Execution</b></summary>
+
+```bash
+$ agy run "Audit my repository, discover technical edge, and organize for competition judges"
+
+🔍 [1/4] Scanning Repository Tree...
+    ├── Found 14 unorganized root files (.png, .csv, temp_test.py)
+    ├── Detected 3 broken relative links in README.md
+    └── Parsing AST & codebase dependencies...
+
+✨ [2/4] Competitive Edge & Novelty Discovery:
+    [✔] Identified Novel Technical Advantage: Zero-Dependency Asynchronous Consensus Protocol
+    [⚡] Down-weighted Saturated Buzzwords: "Built with React", "Uses AsyncIO"
+    [📝] Generated Private Audit Report: .agents/reports/audit_feedback.md
+
+🏗️ [3/4] Archetype Alignment:
+    [🎯] Target Scenario Selected: `competition-research`
+    [📦] Re-structured files:
+          • Created /docs/submission/ (Judges & Criteria Alignment)
+          • Created /src/ & /tests/
+          • Moved root clutter to /artifacts/scratch/
+
+🔗 [4/4] Healing Links & Final Verification:
+    [✔] Healed 3 broken README markdown references
+    [✔] Generated clean GitHub Landing Page
+
+✅ SUCCESS: Repository restructured into high-conversion 'competition-research' layout!
+```
+</details>
+
+---
+
 ## 🎯 Core Philosophy: Audience Alignment & Friction Reduction
 
 A great GitHub repository is not defined by rigid boilerplate, but by **how effortlessly it communicates with its target audience**:
@@ -18,11 +55,17 @@ A great GitHub repository is not defined by rigid boilerplate, but by **how effo
 
 `repo-organizer-skill` gives AI Agents (Antigravity, Cursor, Claude MCP, Gemini) the exact intelligence to **audit your code, identify your true competitive edge, and align your repository structure with your specific scenario.**
 
-```
-┌────────────────────────┐      ┌──────────────────────────────┐      ┌─────────────────────────────┐
-│   Messy Root Clutter   │ ───► │  Agent Innovation Audit &    │ ───► │  Audience-Aligned Repo      │
-│ (PNGs, CSVs, Pycache)  │      │  Competitive Edge Discovery  │      │  Structure (8 Archetypes)   │
-└────────────────────────┘      └──────────────────────────────┘      └─────────────────────────────┘
+### 📊 Agent Workflow Diagram
+
+```mermaid
+flowchart LR
+    A[Messy Root Clutter\n.png, .csv, temp files] --> B{Agent Innovation Audit}
+    B -->|1. Novelty Discovery| C[Identify Technical Edge]
+    B -->|2. Link Healing| D[Fix Broken References]
+    B -->|3. Archetype Router| E[Select 1 of 8 Archetypes]
+    C --> F[Audience-Aligned\nGitHub Repository]
+    D --> F
+    E --> F
 ```
 
 ---
@@ -30,6 +73,8 @@ A great GitHub repository is not defined by rigid boilerplate, but by **how effo
 ## 💎 Killer Feature: Agent Innovation Audit & Developer Feedback Loop
 
 Developers often lack objective self-awareness of their code's true strengths. They highlight commodity features (*"Built with React"*) while missing their **genuine unfair technical advantage**.
+
+![Competitive Edge & Novelty Audit Dashboard](assets/audit-report-demo.jpg)
 
 `repo-organizer-skill` equips your Agent to perform a 4-step audit:
 
@@ -42,9 +87,22 @@ Developers often lack objective self-awareness of their code's true strengths. T
 
 ## 🏛️ 8 Popular Repository Archetypes
 
-Click any archetype to view its recommended structure and before/after example:
+Select an archetype below to view its target audience, recommended layout, and detailed documentation:
 
-| Archetype | Target Audience | Example Structure |
+```mermaid
+graph TD
+    Repo[Repository] --> Router{Scenario Needs?}
+    Router -->|Hackathon / AI4R| Archetype1[competition-research]
+    Router -->|Paper Appendix| Archetype2[paper-release]
+    Router -->|PyPI / SDK| Archetype3[open-source-library]
+    Router -->|ML / Data Pipeline| Archetype4[data-science-pipeline]
+    Router -->|AI Agent Skill| Archetype5[agent-skill-mcp]
+    Router -->|Awesome List| Archetype6[curated-awesome-list]
+    Router -->|Web App / SaaS| Archetype7[fullstack-web-app]
+    Router -->|CLI Tool| Archetype8[cli-binary-tool]
+```
+
+| Archetype | Target Audience | Structure Example |
 | :--- | :--- | :--- |
 | **`competition-research`** | Hackathons, Datawhale AI4R, Competitions | [View Example](examples/competition-research.md) |
 | **`paper-release`** | arXiv Paper Appendix, Conference Repos | [View Example](examples/paper-release.md) |
@@ -80,7 +138,7 @@ curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skil
 ### Option 2: Global Machine Installation
 ```bash
 mkdir -p ~/.gemini/config/skills/repo-organizer
-curl -sSL https://raw.githubusercontent.com/angelazu-bullet/repo-organizer-skill/main/SKILL.md -o ~/.gemini/config/skills/repo-organizer/SKILL.md
+curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skill/main/SKILL.md -o ~/.gemini/config/skills/repo-organizer/SKILL.md
 ```
 
 ---
