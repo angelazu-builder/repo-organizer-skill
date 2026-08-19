@@ -1,6 +1,6 @@
 # 📦 repo-organizer-skill
 
-> **AI Agent Skill for auditing, restructuring, and optimizing GitHub repositories based on target audience & use-case — with automated competitive edge discovery and authentic demo asset capture.**
+> **Enterprise AI Agent Skill for auditing, restructuring, and optimizing GitHub repositories based on target audience & scenario — featuring Dual-Scope (Internal AST + External Search) Novelty Audits, Invariant Verification, Safe AST Migration with Rollback, and Evidence-Based Landing Pages.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/)
@@ -9,60 +9,90 @@
 
 ---
 
-## 🎬 Real Terminal Demo & Agent Execution
+## 🏛️ Architecture Overview & Safety System
 
 ```mermaid
-flowchart LR
-    A[Messy Root Clutter\n.png, .csv, temp files] --> B{Agent Innovation Audit}
-    B -->|1. Novelty Discovery| C[Identify Technical Edge]
-    B -->|2. Demo Asset Capture| D[Browser Screenshot / Data Plot]
-    B -->|3. Archetype Router| E[Select 1 of 8 Archetypes]
-    C --> F[Audience-Aligned\nGitHub Repository]
-    D --> F
-    E --> F
+flowchart TD
+    SubGraph1[1. Pre-Migration Baseline] --> SubGraph2[2. Dual-Scope Innovation Audit]
+    SubGraph2 --> SubGraph3[3. Safe AST Migration & Dry-Run]
+    SubGraph3 --> SubGraph4[4. Invariant Verification Guard]
+    SubGraph4 -->|Pass| SubGraph5[5. Evidence-Based README & Asset Capture]
+    SubGraph4 -->|Fail| Rollback[🔴 STOP & Automatic Rollback]
+
+    subgraph SubGraph1 [1. Invariant Baseline]
+        A1[Capture README Links]
+        A2[Capture AST Imports & Entry Points]
+        A3[Capture CI Workflows & Docker Paths]
+        A4[Capture Test & Build Commands]
+    end
+
+    subgraph SubGraph2 [2. Dual-Scope Innovation Audit]
+        B1[Internal Codebase AST Audit]
+        B2[External Web/GitHub/arXiv Search]
+        B3[Verify Evidence Proof Tuples]
+    end
+
+    subgraph SubGraph3 [3. Safe AST Migration]
+        C1[AST Path & IO Dependency Analysis]
+        C2[Generate Migration Plan & Dry-Run]
+        C3[Execute Migration & Heal Paths]
+    end
+
+    subgraph SubGraph4 [4. Invariant Verification Guard]
+        D1[AST Import Verification]
+        D2[Link Integrity Audit]
+        D3[Run Test & Build Suite]
+    end
 ```
-
-<details open>
-<summary><b>💻 Live Terminal Execution Transcript</b></summary>
-
-```bash
-$ agy run "Audit my repository, discover technical edge, and organize for competition judges"
-
-🔍 [1/4] Scanning Repository Tree...
-    ├── Found 14 unorganized root files (.png, .csv, temp_test.py)
-    ├── Detected 3 broken relative links in README.md
-    └── Parsing AST & codebase dependencies...
-
-📸 [2/4] Visual Assets & Live Demo Protocol:
-    ├── Checking repository for visual demo assets...
-    ├── [!] No existing demo screenshot detected.
-    ├── Launching web app / opening active server (http://localhost:8501)...
-    └── [✔] Captured authentic product screenshot to `docs/assets/demo-screenshot.png`
-
-✨ [3/4] Competitive Edge & Novelty Discovery:
-    ├── [✔] Identified Novel Technical Advantage: Zero-Dependency Asynchronous Consensus Protocol
-    ├── [⚡] Down-weighted Saturated Buzzwords: "Built with React", "Uses AsyncIO"
-    └── [📝] Generated Private Audit Report: `.agents/reports/audit_feedback.md`
-
-🏗️ [4/4] Archetype Alignment & Final Output:
-    ├── [🎯] Target Scenario Selected: `competition-research`
-    ├── [📦] Re-structured files into /docs/submission/, /src/, /tests/
-    └── [✔] Healed 3 broken README markdown references
-
-✅ SUCCESS: Repository restructured into high-conversion 'competition-research' layout!
-```
-</details>
 
 ---
 
-## 🎯 Core Philosophy: Audience Alignment & Friction Reduction
+## ⚡ Key Capabilities
 
-A great GitHub repository is not defined by rigid boilerplate, but by **how effortlessly it communicates with its target audience**:
-- **Competition Judges** want a structured deliverables hub (`docs/submission/`).
-- **Academic Peer Reviewers** want zero-friction single-command reproduction (`python run_eval.py`).
-- **Developers** want quickstart installation and clean modular code (`src/pkg/`, `tests/`).
+### 🔬 1. Dual-Scope Innovation Audit (Internal AST + External Search)
+Never rely on LLM training weights alone to judge code novelty. `repo-organizer-skill` conducts an internal AST audit combined with external GitHub/arXiv searches, producing structured proof tuples for every claim:
 
-`repo-organizer-skill` gives AI Agents (Antigravity, Cursor, Claude MCP, Gemini) the exact intelligence to **audit your code, identify your true competitive edge, capture real product screenshots, and align your repository structure with your specific scenario.**
+```text
+Claim        : Zero-Dependency Asynchronous Consensus Engine
+Comparable   : github.com/sota-project/consensus-core
+Difference   : 4.2x lower memory overhead & zero external C-bindings
+Evidence     : src/consensus/engine.py#L84-L120
+Confidence   : High (Validated against 12 GitHub search results)
+```
+
+---
+
+### 🛡️ 2. Before/After Invariant Verification System
+Restructuring must never break your codebase. Before touching a single file, the skill captures an **Invariant Baseline** across 6 critical domains:
+- 🔗 **README & Documentation Links**
+- 🐍 **AST Python Imports & Module Graphs**
+- 🚀 **Package Entry Points & CLI Executables**
+- ⚙️ **CI/CD Workflows (`.github/workflows/`)**
+- 🐳 **Docker & Configuration File Paths**
+- 🧪 **Automated Test & Build Suites**
+
+Post-migration, all 6 domains are re-verified to guarantee: **Same semantics, better structure.**
+
+---
+
+### 🛟 3. Safe AST Migration Protocol (Dry-Run & Rollback Guard)
+- **AST-Based Path Parsing**: Analyzes Python AST (`ast.parse()`) and configuration IO dependencies rather than relying on brittle regex search/replace.
+- **Dry-Run Plan**: Simulates file relocations to catch path collisions before touching disk.
+- **Strict Halt & Rollback**: If any test, build command, or invariant check fails post-migration, execution **stops immediately** and triggers an automatic rollback (`git reset --hard HEAD` / snapshot restore).
+
+---
+
+## 📊 4. Evidence-Based README Interface
+
+Instead of superficial marketing fluff, `repo-organizer-skill` generates archetype-specific landing pages structured around an **Evidence-Based Information Architecture**:
+
+$$\text{What} \longrightarrow \text{Why} \longrightarrow \text{Evidence} \longrightarrow \text{How} \longrightarrow \text{Differentiator}$$
+
+- **What**: Clear 1-sentence product definition.
+- **Why**: Target scenario & audience problem statement.
+- **Evidence**: AST benchmark data, reproducible evaluation results, or external comparison proof tuples.
+- **How**: 1-line zero-friction installation / execution command.
+- **Differentiator**: Concrete technical advantage hyperlinked directly to authoritative source code lines.
 
 ---
 
@@ -79,19 +109,6 @@ When auditing a repository without demo assets, `repo-organizer-skill` automatic
 2. Automates browser navigation to take authentic full-page or element screenshots.
 3. Generates real benchmark plots directly from dataset metrics.
 4. Places captured media in `docs/assets/` and links them in `README.md`.
-
----
-
-## 💎 Killer Feature: Agent Innovation Audit & Developer Feedback Loop
-
-Developers often lack objective self-awareness of their code's true strengths. They highlight commodity features (*"Built with React"*) while missing their **genuine unfair technical advantage**.
-
-`repo-organizer-skill` equips your Agent to perform a 4-step audit:
-
-1. 🟢 **Discover Genuine Technical Novelty**: Identifies algorithms, JIT accelerations, and zero-dependency designs unique across GitHub.
-2. 🟡 **Filter Saturated Commodity Claims**: Down-weights commonplace claims (*"Uses AsyncIO"*) so they don't waste prime README real estate.
-3. ✨ **Inject `✨ Key Edge` Section**: Automatically formats and places your true competitive edge right below the title hook.
-4. 🔴 **Output Developer Feedback Report**: Delivers a private audit report identifying competitive gaps against SOTA projects.
 
 ---
 
@@ -130,11 +147,11 @@ graph TD
 | Capability | Manual Cleanup | General AI (Codex / Claude) | `repo-organizer-skill` |
 | :--- | :---: | :---: | :---: |
 | **Root Junk Identification (`.png`, `.csv`)** | ⚠️ Manual | ✅ Capable | ✅ Automated Workflow |
-| **Basic README Formatting & Badges** | ⚠️ Manual | ✅ Capable | ✅ Automated Workflow |
-| **Multi-Audience Alignment (8 Archetypes)** | ❌ No | ⚠️ Needs Complex Prompting | ✅ Built-in Workflows |
-| **Directory-Wide Link & Import Healing** | ⚠️ Error-Prone | ⚠️ Single-file Scope | ✅ Full Tree Verification |
-| **Live App Screenshot & Data Plot Capture** | ❌ No | ❌ No | ✅ Automated Browser/Plot Workflow |
-| **Competitive Edge Audit & Feedback Report** | ❌ Subjective | ❌ No | ✅ Automated 4-Step Loop |
+| **Dual-Scope Novelty Audit (AST + Web Search)** | ❌ No | ❌ LLM Hallucination | ✅ Search-Validated Proof Tuples |
+| **Before/After Invariant Baseline Verification** | ❌ Manual | ❌ No | ✅ 6-Domain Automated Checks |
+| **Safe AST Migration + Dry-Run & Rollback** | ⚠️ Error-Prone | ⚠️ Single-file Scope | ✅ Full AST Parsing & Rollback Guard |
+| **Evidence-Based README Interface** | ❌ No | ⚠️ Generic Marketing | ✅ What → Why → Evidence → How |
+| **Live App Screenshot & Data Plot Capture** | ❌ No | ❌ No | ✅ Browser Automation & Real Plots |
 
 ---
 
@@ -159,9 +176,9 @@ curl -sSL https://raw.githubusercontent.com/angelazu-builder/repo-organizer-skil
 Once installed, simply ask your agent:
 
 ```text
-"Audit my repository and structure it for competition judges."
-"Discover the true competitive edge of my codebase and update the README."
-"Restructure this codebase for an academic paper release."
+"Audit my repository novelty against GitHub/arXiv and organize it for competition judges."
+"Run AST dependency analysis, record invariants, and restructure this codebase safely."
+"Generate an Evidence-Based README interface backed by real benchmark evidence."
 ```
 
 ---
