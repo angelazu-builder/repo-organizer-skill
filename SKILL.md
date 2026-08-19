@@ -2,7 +2,8 @@
 name: repo-organizer
 description: >-
   Audits, restructures, and cleans messy GitHub repositories into high-conversion landing pages based on target audience and scenario.
-  Includes Dual-Scope (Internal + External) Innovation Audits, Before/After Invariant Verification, Safe AST-Based Migration with Dry-Run & Rollback,
+  Features an Evidence-Backed Architecture: Explicit Tool Stack Matrix (git, GitHub REST/GraphQL API, OpenAlex/arXiv, AST, Tree-sitter),
+  3-Layer External Novelty Audit (GitHub -> arXiv -> Web), Deterministic Invariant Baseline, AST Safe Migration Pipeline with Dry-Run & Rollback,
   Authentic Demo Asset Capture, and Evidence-Based README Interfaces across 8 Popular GitHub Archetypes.
   Use when the user asks to clean up root directory clutter, structure a repo for competition judges,
   prepare an academic paper release, build an open-source SDK layout, discover repository competitive edge, optimize README conversion, or fix broken links.
@@ -12,106 +13,149 @@ description: >-
 
 This skill provides an enterprise-grade procedure for auditing, reorganizing, and polishing GitHub codebases into clean, safe, and **high-converting repository landing pages**.
 
-> **Core Philosophy**: A GitHub repository is fundamentally a **Marketing Tool & Technical Landing Page**. Restructuring must guarantee **same semantics, better structure** while grounding all competitive edge claims in verifiable internal code evidence and external market comparisons.
+> **Core Philosophy & System Positioning**: `repo-organizer` is NOT just a prompt that writes pretty READMEs; it is an **Evidence-Backed Repository Transformation Agent**. All competitive edge claims must originate from deterministic local parser scans and external API evidence before LLM synthesis.
 
 ---
 
-## 🔬 1. External & Internal Innovation Audit System
+## 🏛️ Golden Architectural Hierarchy
 
-Developers often lack objective awareness of their codebase's true technical differentiators. `repo-organizer` executes a dual-scope audit (Internal AST/Code Inspection + External Web/GitHub/arXiv Search) to discover true technical novelty.
-
-> ⚠️ **STRICT RULE: PROHIBIT LLM-ONLY NOVELTY JUDGMENTS**  
-> An agent MUST NOT declare a feature "novel" based solely on LLM training weights. Every claimed innovation MUST be validated against real SOTA repos/papers via external search.
-
-```
-[1. AST Code Audit] ──▶ [2. External Search (GitHub/arXiv)] ──▶ [3. Evidence Tuple Verification] ──▶ [4. Developer Audit Report]
-```
-
-### Structured Evidence Tuple Format
-For EVERY identified competitive edge or novelty claim, the agent MUST format and output the following 5-part proof tuple:
+To prevent hallucinations and guarantee filesystem safety, the agent MUST enforce this execution hierarchy:
 
 ```text
-Claim        : <Target feature / architectural implementation claim>
-Comparable   : <Existing SOTA repository, paper, or library found via search>
-Difference   : <Exact technical delta / speedup / dependency advantage>
-Evidence     : <Code snippet file:line, benchmark result CSV, or commit link>
-Confidence   : <High | Medium | Low with explicit rationale>
+                  LLM (Interpretation / Synthesis / Plan Proposal)
+                             ┌─────────┴─────────┐
+                             ▼                   ▼
+           Web / APIs / Search           Local Analyzers & Parsers
+            (External Evidence)             (Code / Filesystem)
+                             │                   │
+                             └─────────┬─────────┘
+                                       ▼
+                            Deterministic Verification Checks (Git / AST / Parsers / Tests)
+                                       ▼
+                                  Final Action
 ```
 
-### Audit Pipeline Steps:
-1. **Internal Codebase Audit**: Parses AST, algorithms, custom data structures, JIT accelerations, zero-dependency modules, and memory patterns.
-2. **External Market Search**: Executes searches (`search_web` / GitHub API) against comparable open-source repos and arXiv papers.
-3. **Commodity Claim Filtering**: Filters out generic statements (*"Built with React"*, *"Uses AsyncIO"*).
-4. **Developer Audit Report**: Outputs a private audit log (`.agents/reports/innovation_audit.md`) detailing confirmed edges, filtered commodity claims, and competitive gaps.
+---
+
+## 🛠️ Mandatory Tool Stack Matrix
+
+Never rely on LLM internal weights alone. Match every sub-task to its deterministic tool/API:
+
+| Task / Domain | Primary Tool / API | Specific Purpose & Method |
+| :--- | :--- | :--- |
+| **Repo & Version Info** | `git` / `gh` CLI | `git clone`, `commit`, `diff`, `branch`, `history`, `git ls-files` |
+| **GitHub Metadata** | GitHub REST / GraphQL API (`gh api`) | Retrieve repo metadata, languages, topics, stars, forks, contributors |
+| **GitHub External Search** | GitHub Search API (`gh api /search/...`) | Search top 5–10 real comparable implementations (`code search`, `repository search`) |
+| **Code-level Novelty** | AST (`ast`) / `Tree-sitter` / `ripgrep` | Extract algorithms, data structures, custom workflows (No LLM guessing!) |
+| **Academic Novelty** | OpenAlex API + arXiv API | Search papers, mechanisms, comparable algorithms, publication timestamps |
+| **Web / Product Competitors**| `search_web` / HTTP | Search official product sites, blogs, benchmarks, company implementations |
+| **Markdown Link Audit** | Python Markdown Parser + HTTP HEAD/GET | Parse relative Markdown links and verify external URL HTTP response codes |
+| **Python Import Audit** | Python `ast` module (`ast.parse()`) | AST tree parsing of module dependencies and import statements (No regex guessing!) |
+| **JS/TS Import Audit** | `Tree-sitter` / TypeScript Compiler API | Parse module import trees and export dependencies for JavaScript/TypeScript |
+| **YAML / CI Audit** | `PyYAML` / YAML Parsers | Inspect `.github/workflows/*.yml` step paths and environment variables |
+| **Package Scripts** | JSON / TOML Parsers | Parse `package.json`, `pyproject.toml`, `Cargo.toml` entry points and scripts |
+| **Dependency Graph** | Native Package Managers | `npm`/`pnpm`, `uv`/`poetry`/`pip`, `cargo` dependency resolution |
+| **Test/Build Verification** | Native Repo Commands | Execute `pytest`, `npm test`, `cargo test`, `make` to verify runtime integrity |
+| **Diff Sanity Check** | `git diff --check` + `git diff` | Verify whitespace, path changes, and code diffs before final commit |
+| **Migration Execution** | `git mv` + Custom Script | Perform atomic, trackable, and safe file relocations |
+| **Rollback Guard** | `git reset` / Git Worktree | Instantly restore baseline on test or invariant failure |
+
+---
+
+## 🔬 1. 3-Layer External Novelty Audit Protocol
+
+> ⚠️ **STRICT EXECUTION ORDER: EVIDENCE ──► MODEL JUDGMENT**  
+> The agent MUST collect hard search evidence first, then synthesize. Never let the LLM guess novelty from memory and find evidence backwards.
+
+```
+[Layer A: GitHub Search API] ──► [Layer B: OpenAlex & arXiv API] ──► [Layer C: Web Product Search] ──► [LLM Synthesis & Proof Tuple]
+```
+
+### Layer A: GitHub Search API (`gh api /search/repositories` & `gh api /search/code`)
+- Query GitHub API for exact keywords, topic tags, and code AST patterns.
+- Retrieve the top 5–10 real comparable implementations.
+
+### Layer B: Academic Papers (OpenAlex API + arXiv API)
+- Query OpenAlex and arXiv APIs for core technical keywords and algorithms.
+- **LLM Restriction**: The LLM MUST NOT state *"This is novel."* It MUST state: *"Based on OpenAlex/arXiv API search, I found / did not find comparable work."*
+
+### Layer C: Web & Product Search (`search_web`)
+- Search official product documentations, tech blogs, and benchmark reports.
+
+### Structured Evidence Proof Tuple
+For EVERY identified feature or innovation, output the 6-part proof tuple:
+
+```text
+Claim        : <Target feature / implementation claim>
+Comparable   : <SOTA repository, paper, or library reference retrieved via API>
+Similarity   : <Matched mechanism or algorithmic structure>
+Difference   : <Exact technical delta / memory / zero-dependency advantage>
+Evidence     : <File path:line number or raw benchmark CSV output>
+Confidence   : <verified | supported | plausible | unsupported>
+```
 
 ---
 
 ## 🛡️ 2. Before/After Invariant Verification System
 
-Restructuring must NEVER break execution paths, import paths, or build pipelines. The primary objective is:
+Restructuring must NEVER alter execution semantics. The strict core objective is:
 
 > **SAME SEMANTICS, BETTER STRUCTURE.**
 
-### Pre-Migration Invariant Baseline
-Before modifying any files or directories, automatically record a snapshot of the repository's **Invariant Baseline**:
+### Deterministic Baseline Tracking (Local AST & Parsers)
+Before moving files, automatically construct a baseline using deterministic local parsers (`ast`, `pathlib`, `json`, `tomllib`, `pyyaml`, `git ls-files`):
 
-| Invariant Category | Target Artifacts / Paths Captured |
-| :--- | :--- |
-| **README Links** | All relative markdown links (`[text](path)`), image tags, and anchor targets |
-| **Python Imports** | Complete module dependency graph, internal package imports (`from .pkg import x`), `sys.path` references |
-| **Entry Points** | `pyproject.toml`, `setup.py`, `package.json` scripts, `main.py`, CLI binaries |
-| **CI Workflows** | `.github/workflows/*.yml` step execution paths, action scripts, path triggers |
-| **Docker & Configs** | `Dockerfile`, `docker-compose.yml`, `.env.example`, JSON/YAML configuration file paths |
-| **Build & Tests** | Test suites (`pytest`, `npm test`), build scripts (`make`, `python setup.py sdist`) |
+| Invariant Category | Local Parser / Tool Used | Target Baseline Elements |
+| :--- | :--- | :--- |
+| **README Links** | Markdown Parser + HTTP HEAD | All relative links (`[text](path)`), image tags, anchor targets |
+| **Python Imports** | Python `ast.parse()` | Full AST module import tree (`from .pkg import x`), `sys.path` references |
+| **JS/TS Imports** | `Tree-sitter` / TS Compiler API | Module import/export graph for `.js`, `.ts`, `.jsx`, `.tsx` |
+| **Entry Points** | JSON / TOML Parsers | `package.json` scripts, `pyproject.toml`, `main.py`, CLI binaries |
+| **CI Workflows** | `PyYAML` | `.github/workflows/*.yml` step paths and environment references |
+| **Docker & Configs**| JSON / YAML / `.env` Parsers | `Dockerfile`, `docker-compose.yml`, configuration file paths |
+| **Tests & Builds** | `subprocess` + Native Commands | Test suites (`pytest`, `npm test`) & build scripts (`make`) |
 
-### Post-Migration Verification
-After restructuring, re-execute verification on all 6 invariant categories. If ANY invariant fails or returns a non-zero exit code, trigger the **Safe Migration Rollback Protocol**.
+Post-migration, re-run all local parsers and verification commands. If ANY invariant fails, trigger the **Safe Migration Rollback Protocol**.
 
 ---
 
-## 🛟 3. Safe AST-Based Migration Protocol (Dry-Run & Rollback)
+## 🛟 3. Safe Migration Pipeline (LLM Plan ──► Deterministic Execution ──► Rollback)
 
-All file movements, path updates, and directory reorganizations MUST follow a strict multi-phase safety pipeline.
+The LLM is responsible for proposing migration plans, but **DOES NOT have unguided filesystem authority**.
 
+```text
+LLM ↓ 
+Propose Migration Plan ↓ 
+Deterministic Analyzer (Path & AST Validation) ↓ 
+Dry-Run Simulation ↓ 
+Human/Agent Approval ↓ 
+git mv & Script Execution ↓ 
+Tests & Invariant Verification ↓ 
+[Pass: Final Commit] OR [Fail: Automatic Git Reset Rollback]
 ```
-[Phase 1: AST Path Analysis] ──▶ [Phase 2: Dry-Run Plan] ──▶ [Phase 3: Migration Execution] ──▶ [Phase 4: Invariant Audit & Rollback Guard]
-```
 
-### Phase 1: AST Dependency & Path Analysis
-- **AST Import Audit**: Use Python AST parsing (`ast.parse()`) rather than superficial regex string replace to track all module import paths and symbol definitions.
-- **Config & Resource Mapping**: Trace relative file IO paths (`open("config/settings.json")`) across the codebase.
-
-### Phase 2: Migration Plan & Dry-Run
-- Generate a explicit **Migration Plan** mapping `Source Path ──► Destination Path`.
-- Perform a simulated dry-run to identify potential path collisions, circular imports, or broken relative references prior to disk modification.
-
-### Phase 3: Execution & Link/Import Healing
-- Execute file movements.
-- Programmatically update AST import paths, relative Markdown links, CI workflow YAML steps, and configuration paths.
-
-### Phase 4: Strict Halt & Rollback Protocol
-- **Post-Migration Verification**: Run `git diff` sanity checks, AST import verification, link verification, and test execution.
-- 🔴 **STRICT HALT RULE**: If any test, build, or invariant check fails post-migration:
-  1. **STOP IMMEDIATELY**. Do NOT attempt hacky inline patches or force commits.
-  2. Execute automatic rollback (`git reset --hard HEAD` / restore migration snapshot).
-  3. Generate a diagnostic report explaining the exact failed invariant to the developer.
+### Safety Rules:
+1. **AST & Path Validation**: Verify that file relocations map cleanly to updated import paths without circular dependencies.
+2. **Dry-Run**: Output a simulation of file movements (`Source ──► Destination`) before disk modification.
+3. **Execution**: File relocations MUST be performed via `git mv` or custom deterministic scripts for atomic git history tracking.
+4. **Strict Halt & Rollback**: If tests fail post-migration, execute immediate rollback (`git reset --hard HEAD` / restore git worktree).
 
 ---
 
 ## 📊 4. Evidence-Based README Interface
 
-Do not rely on superficial marketing fluff or generic hooks. `repo-organizer` structures README landing pages using an **Evidence-Based Information Architecture**:
+Construct README landing pages using an **Evidence-Based Information Architecture**:
 
-> **What ──► Why ──► Evidence ──► How ──► Differentiator**
+$$\text{What} \longrightarrow \text{Why} \longrightarrow \text{Evidence} \longrightarrow \text{How} \longrightarrow \text{Differentiator}$$
 
-### Information Architecture Blueprint
-1. **What**: Crisp 1-sentence definition of the repository and its core capability.
-2. **Why**: Clear problem statement and target audience scenario alignment.
-3. **Evidence**: Reproducible benchmark metrics, AST performance comparison tables, or verified external proof tuples (`Claim → Comparable → Difference → Evidence → Confidence`).
-4. **How**: Zero-friction 1-line copy-paste quickstart command / reproduction script.
-5. **Differentiator**: Concrete technical distinction vs. existing open-source solutions (backed by code line references).
-
-Every claim in the **"✨ Key Innovations & Competitive Edge"** section MUST hyperlink directly to the authoritative source code file (`file:///src/core/solver.py#L45`), benchmark log, or external comparison reference.
+| Section | Content Origin | Generation Rule |
+| :--- | :--- | :--- |
+| **What** | LLM Synthesis | Crisp 1-sentence product definition |
+| **Why** | LLM Synthesis | Clear problem statement & target scenario alignment |
+| **Evidence** | **Machine Scan / Tests / Benchmarks** | Benchmark metrics, test outputs, AST stats (No LLM fluff!) |
+| **How** | System / Code Inspection | Zero-friction 1-line reproduction / quickstart script |
+| **Differentiator** | **API Search + AST Proof Tuples** | Technical distinction hyperlinked to code lines (`src/core/solver.py#L45`) |
+| **Confidence** | **Deterministic Auditor** | Categorized as `verified`, `supported`, `plausible`, or `unsupported` |
 
 ---
 
@@ -178,23 +222,23 @@ Identify the **primary target audience and scenario** with the user:
 
 ## 🛠️ Step-by-Step Execution Workflow
 
-### Step 1: Pre-Migration Invariant Baseline Capture
-Automatically discover and record all 6 invariant categories (README links, AST imports, entry points, CI workflows, docker/configs, test commands).
+### Step 1: Deterministic Baseline Capture
+Use `git ls-files`, `ast.parse()`, `PyYAML`, and JSON/TOML parsers to record the 6-domain Invariant Baseline.
 
-### Step 2: Dual-Scope Innovation Audit (Internal AST + External Search)
-Execute AST code analysis and web/GitHub search. Generate structured proof tuples (`Claim → Comparable → Difference → Evidence → Confidence`) for confirmed technical edges.
+### Step 2: 3-Layer Novelty Audit (GitHub API ──► OpenAlex/arXiv ──► Web Search)
+Query GitHub Search API, OpenAlex/arXiv API, and `search_web`. Output structured proof tuples (`Claim → Comparable → Similarity → Difference → Evidence → Confidence`).
 
-### Step 3: Migration Plan & AST Dry-Run
-Build source-to-destination map, perform AST import analysis, and dry-run migration to detect path collisions.
+### Step 3: Migration Plan & AST Dry-Run Validation
+LLM proposes migration plan. Deterministic AST/path analyzer validates dependencies and performs dry-run simulation.
 
 ### Step 4: Root Audit & Junk Cleanup
 Identify loose files at root level (`.png`, `.csv`, `.log`, `__pycache__`) and organize or gitignore them safely.
 
-### Step 5: Directory Restructuring & Safe File Migration
-Move files according to selected archetype. Programmatically update AST imports, relative Markdown links, CI steps, and config paths.
+### Step 5: Safe Migration Execution (`git mv` & Script)
+Execute file movements via `git mv`. Programmatically update AST imports, relative Markdown links, CI steps, and config paths.
 
 ### Step 6: Invariant Re-Verification & Rollback Guard
-Run link audit, AST import verification, test suites, and `git diff` sanity check. **If any test or invariant fails, halt immediately and trigger rollback.**
+Run link audit, AST import verification, test commands, and `git diff --check`. **If any test or invariant fails, trigger immediate `git reset` rollback.**
 
 ### Step 7: Evidence-Based README Interface & Asset Protocol
 Construct README following **What → Why → Evidence → How → Differentiator**. Ensure all visual assets are authentic browser screenshots or real data plots (NO AI visuals).
@@ -206,12 +250,13 @@ Ensure `.gitignore` excludes temporary lock files and cache. Commit with message
 
 ## 📋 Reorganization & Edge Checklist
 
-- [ ] Invariant Baseline captured across all 6 categories prior to migration.
-- [ ] Dual-Scope Innovation Audit completed with external search (NO LLM-only novelty claims).
-- [ ] All competitive edge claims formatted as structured proof tuples (`Claim → Comparable → Difference → Evidence → Confidence`).
-- [ ] AST-based dependency analysis and migration dry-run executed.
+- [ ] Tool Stack Matrix utilized (git/gh, AST, PyYAML, OpenAlex/arXiv, search_web).
+- [ ] Invariant Baseline captured using local AST and parsers prior to migration.
+- [ ] 3-Layer Novelty Audit completed (GitHub Search API ──► OpenAlex/arXiv ──► Web Search).
+- [ ] All competitive edge claims formatted as proof tuples with confidence (`verified | supported | plausible | unsupported`).
+- [ ] Migration plan validated by AST analyzer and executed via `git mv`.
 - [ ] Invariant re-verification passed (links, AST imports, entry points, CI workflows, tests).
-- [ ] Rollback protocol verified in case of verification failure (same semantics, better structure).
+- [ ] Automatic rollback guard verified in case of test failure (same semantics, better structure).
 - [ ] README structured via Evidence Interface (**What → Why → Evidence → How → Differentiator**).
 - [ ] Authentic demo screenshot captured from running app OR real data plot generated (NO AI visuals).
 - [ ] Root directory contains ONLY essential entry files (`README.md`, `main.py`, `requirements.txt`, `LICENSE`, `.gitignore`).
